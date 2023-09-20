@@ -12,7 +12,7 @@ buildExpired: false
   # googleAnalytics: UA-123-45
 
 minify:
-  disableXML: true
+  disableXML: false
   minifyOutput: true
 
 params:
@@ -33,6 +33,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
   ShowWordCount: true
+  ShowFullTextinRSS: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   disableSpecial1stPost: false
@@ -45,23 +46,24 @@ params:
 
   assets:
     # disableHLJS: true # to disable highlight.js
-    disableFingerprinting: true
-    favicon: "<link / abs url>"
+    disableFingerprinting: false
+    favicon: "https://blog.bhread.com/favicon.png"
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
     apple_touch_icon: "<link / abs url>"
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
-    icon: /apple-touch-icon.png
+    text: "blog.bhread.com"
+      # icon: /apple-touch-icon.png
+    icon: /favicon.svg
     iconHeight: 35
 
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
+    title: The Bhread Blog
+    subtitle: "The official blog of Bhread.com"
     imageUrl: "<img location>"
     imageWidth: 120
     imageHeight: 120
@@ -74,24 +76,27 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "The Bhread Blog"
+    Content: "The official blog of Bhread.com."
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
-    - name: github
-      url: "https://github.com/"
+    # - name: twitter
+    #   url: "https://twitter.com/"
+    # - name: stackoverflow
+    #   url: "https://stackoverflow.com"
+    # - name: github
+    #   url: "https://github.com/elpachongco/bhread"
+    - name: rss
+      url: "/index.xml"
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
+
+        # analytics:
+        #   google:
+        #     SiteVerificationTag: "XYZabc"
+        #   bing:
+        #     SiteVerificationTag: "XYZabc"
+        #   yandex:
+        #     SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -99,7 +104,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/elpachongco/bhread-blog/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -115,6 +120,10 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 20
     - identifier: categories
       name: categories
       url: /categories/
@@ -123,10 +132,15 @@ menu:
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
+    - identifier: feed
+      name: subscribe
+      url: /index.xml
       weight: 30
+    - identifier: site
+      name: bhread
+      url: https://bhread.com
+      weight: 40
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
@@ -137,3 +151,9 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
