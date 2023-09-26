@@ -14,7 +14,7 @@ cover:
     image: "/images/about-bhread-meme.png" # image path/url
     alt: "Meme showing a house on fire and a cartoon character inside saying 'this is fine'" # alt text
     caption: "The absolute state of internet content" # display caption under cover
-    relative: true # when using page bundles set this to true
+    relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 ---
 ## Welcome to Bhread.com!
