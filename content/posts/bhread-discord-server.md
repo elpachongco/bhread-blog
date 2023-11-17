@@ -20,4 +20,4 @@ UseHugoToc: true
 Join the latest conversation about bhread on Discord!
 
 Invite link:
-[https://discord.gg/QBz2dFcs](https://discord.gg/QBz2dFcs)
+[https://discord.gg/QBz2dFcs](https://discord.gg/z8FVXa8sdf)
