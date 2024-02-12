@@ -18,6 +18,8 @@ UseHugoToc: true
 #     hidden: true # only hide on current single page
 ---
 
+replying to [https://blog.bhread.com/posts/my-first-post/](https://blog.bhread.com/posts/my-first-post/)
+
 The new version of [Bhread](https://bhread.com) is now live!
 
 It took me 4 months to complete this. It took longer than expected because of the holidays and my day job.
