@@ -5,7 +5,7 @@ tags: ["blog"]
 author: "elpachongco"
 showToc: true
 TocOpen: true
-draft: false
+draft: true
 hidemeta: false
 description: "The guide to blogs for internet users"
 ShowRssButtonInSectionTermList: true
