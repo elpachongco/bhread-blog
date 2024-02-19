@@ -66,11 +66,11 @@ Here are some things to note:
 
 ### Screenshots
 
-![Screenshot of page with Bhread comments displayed with no replies](img/comment-section-empty.png)
+![Screenshot of page with Bhread comments displayed with no replies]({{< ref "comment_embeds" >}}img/comment-section-empty.png)
 
 *How it looks like without replies. You can probably also look at this post you're reading and find the comment section*
 
-![Screenshot of page with Bhread comments displayed and with replies](img/comment-section-with-reply.png)
+![Screenshot of page with Bhread comments displayed and with replies]({{< ref "comment_embeds" >}}img/comment-section-with-reply.png)
 
 *With a single reply*
 
