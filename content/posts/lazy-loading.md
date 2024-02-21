@@ -104,7 +104,32 @@ The resulting html is this:
 The process continues until no more posts are found.
 
 
-### Was this a good article?
+## How about noJS?
+
+The good thing about HTMX is that it allows the site to degrade well when JS is disabled. It's a bit more complicated to implement but I expect Bhread to deal with mostly static sites. Ones that don't need JS to function. So I think it's worth the effort to implement this. Your mileage may vary.
+
+To outline how this is implemented, here's a rough step-by-step:
+- In the backend, detect if request is coming with an HTMX request header. If not present, the user has JS disabled.
+- In the frontend, add a `<noscript>` tag that includes a button labeled 'next'. This button should include the ID of the last item that was rendered.
+- When generating the html, check if JS is enabled in the request. 
+- If yes, add the htmx-enabled element that will request for new items when seen
+- If not, don't add anything.
+- The `<noscript>` element will still be present whether JS is on or not. We don't need to worry about this because it takes advantage of the fact that this block will not be shown unless JS is disabled.
+- Now make both `/home` and `/htmx-home` accept an ID argument which is the ID of the last element rendered.
+- If JS is enabled, use the route for htmx: `/htmx-home`, passing the ID and returning a new list of partials that continues from the ID
+- The client receives this and appends it to the current list of items.
+- If JS is disabled, use the normal route for the home page `/home`, passing the ID and returning a new page containing the new items that follow the ID.
+- When the button for 'next page' is pressed, the page will reload containing the new posts and another 'next page' button.
+
+If you're interested in this, the code is FOSS, the backend code for this is here:
+
+[views.py](https://github.com/elpachongco/bhread/blob/main/bhread/feed/views.py#L24)
+
+and the HTML template is here:
+
+[home.html](https://github.com/elpachongco/bhread/blob/main/bhread/feed/templates/feed/home.html#L30)
+
+
+## Stay updated
 
 For more updates, subscribe to the [bhread blog's RSS feed](https://blog.bhread.com/index.xml), visit [Bhread.com](https://bhread.com) or [join the discord server](https://blog.bhread.com/posts/bhread-discord-server/).
-
