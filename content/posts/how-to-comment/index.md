@@ -1,5 +1,5 @@
 ---
-title: "How to Comment"
+title: "How to Commentlska jlkj"
 date: 2024-06-15T16:42:25+08:00
 tags: ["how-to"]
 author: "earlps"
@@ -10,6 +10,7 @@ hidemeta: false
 description: "Desc Text."
 ShowRssButtonInSectionTermList: true
 UseHugoToc: true
+permalink: '/how-to-comment'
 # cover:
 #     image: "<image path/url>" # image path/url
 #     alt: "<alt text>" # alt text
