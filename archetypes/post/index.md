@@ -1,8 +1,8 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-tags: ["first"]
-author: "Me"
+tags: []
+author: "earlps"
 showToc: true
 TocOpen: false
 draft: true
